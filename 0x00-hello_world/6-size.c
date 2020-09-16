@@ -1,37 +1,30 @@
-#include <stdio.h> 
-  
-int main() 
-{ 
-    int integerType; 
-    char charType; 
-    float floatType; 
-    long int longintegerType;
-    long long int longlongintegerType; 
-  
-    // Calculate and Print 
-    // the size of char type 
-    printf("Size of a char: %ld byte(s)\n", 
-           sizeof(charType)); 
-  
-    // Calculate and Print 
-    // the size of integer Type 
-    printf("Size of an int: %ld byte(s)\n", 
-           sizeof(integerType)); 
+#include <stdio.h>
 
-    // Calculate and Print 
-    // the size of long integer Type 
-    printf("Size of a long int: %ld byte(s)\n", 
-           sizeof(longintegerType));
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+*/
+int main(void)
+{
+int integerType;
+char charType;
+float floatType;
+long int longintegerType;
+long long int longlongintegerType;
 
-    // Calculate and Print 
-    // the size of long integer Type 
-    printf("Size of a long long int: %ld byte(s)\n", 
-           sizeof(longlongintegerType));
+printf("Size of a char: %ld byte(s)\n", sizeof(charType));
 
-    // Calculate and Print 
-    // the size of floatType 
-    printf("Size of a float: %ld byte(s)\n", 
-           sizeof(floatType));
-  
-    return 0; 
-} 
+
+printf("Size of an int: %ld byte(s)\n", sizeof(integerType));
+
+
+printf("Size of a long int: %ld byte(s)\n", sizeof(longintegerType));
+
+
+printf("Size of a long long int: %ld byte(s)\n", sizeof(longlongintegerType));
+
+printf("Size of a float: %ld byte(s)\n", sizeof(floatType));
+
+return (0);
+}
