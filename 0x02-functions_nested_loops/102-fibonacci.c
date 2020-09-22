@@ -2,7 +2,7 @@
 /**
  * main -this function display the fibo.
  *
- * return: is 0
+ * Return: is 0
  */
 int main(void)
 {
@@ -17,7 +17,7 @@ d = a + b;
 a = b;
 b = d;
 printf("%ld", a);
-if (c !=48)
+if (c != 48)
 {
 printf(", ");
 }
