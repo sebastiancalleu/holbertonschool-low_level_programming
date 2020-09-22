@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * main - check absolute value
- *
- * Return: Always 0.
+ * _abs - check absolute value
+ *@n: variable input
+ * Return: the absolute value.
  */
 int _abs(int n)
 {
-	return n < 0 ? -n : n;
+return (n < 0 ? -n : n);
 }
