@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * main - check all the time in a day O.o?
+ * jack_bauer - check all the time in a day O.o?
  *
- * Return: Always 0.
+ *
  */
 void jack_bauer(void)
 {
@@ -11,7 +11,7 @@ for (a = '0'; a <= '2'; a++)
 {
 if (a < '2')
 {
-for (b = '0'; b <= '9'; b++ )
+for (b = '0'; b <= '9'; b++)
 {
 for (c = '0'; c < '6'; c++)
 {
@@ -23,13 +23,13 @@ _putchar(':');
 _putchar(c);
 _putchar(d);
 _putchar('\n');
-} 
 }
 }
 }
-else 
+}
+else
 {
-for (b = '0'; b < '4'; b++ )
+for (b = '0'; b < '4'; b++)
 {
 for (c = '0'; c < '6'; c++)
 {
