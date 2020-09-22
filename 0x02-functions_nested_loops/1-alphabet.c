@@ -1,13 +1,11 @@
 #include "holberton.h"
 /**
- * entry - main, this is going to print the alphabet
- *
- * retunr: is 0 
+ * print_alphabet - Print the alphabet with lowercase letters.
  */
 void print_alphabet(void)
 {
 int a;
-for(a = 'a'; a <= 'z'; a++)
+for (a = 'a'; a <= 'z'; a++)
 {
 _putchar(a);
 }
