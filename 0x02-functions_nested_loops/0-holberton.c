@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * main - this is going to print Holberton
+ * main - This is going to print Holberton
  *
- * return: is 0
+ * Return: This is the result and is 90
  */
 int main(void)
 {
