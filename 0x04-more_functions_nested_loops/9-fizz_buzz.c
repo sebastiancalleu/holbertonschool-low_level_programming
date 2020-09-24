@@ -31,7 +31,13 @@ printf("%d", a);
 }
 }
 }
+if (a != 100)
+{
 printf(" ");
+}
+else
+{
+}
 }
 printf("\n");
 return (0);
