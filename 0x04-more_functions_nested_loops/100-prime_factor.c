@@ -8,10 +8,14 @@ int main(void)
 {
 long a, b;
 a = 612852475143;
-if (a % 3 == 0)
+for (b = 2; b < a; b++)
 {
-b = a / 3;
-printf("%lu\n", b);
+if ((a % b) == 0)
+{
+a =  a / b;
+b = 1;
 }
+}
+printf("%lu\n", a);
 return (0);
 }
