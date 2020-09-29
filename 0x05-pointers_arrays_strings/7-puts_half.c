@@ -18,7 +18,7 @@ else
 {
 b = (a + 1) / 2;
 }
-for (c = b; c <= a; c++)
+for (c = b; c <= (a - 1); c++)
 {
 _putchar(str[c]);
 }
