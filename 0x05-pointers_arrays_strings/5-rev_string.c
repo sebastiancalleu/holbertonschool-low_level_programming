@@ -17,9 +17,8 @@ for (j = 0; j <= i; j++)
 rev[j] = s[k];
 k--;
 }
-for (m = 0; m <= i; m++)
+for (m = 0; m <= i - 1; m++)
 {
 s[m] = rev[m];
 }
-s[m] = '\0';
 }
