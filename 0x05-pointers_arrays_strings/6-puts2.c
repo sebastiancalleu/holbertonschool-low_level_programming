@@ -6,23 +6,12 @@
  */
 void puts2(char *str)
 {
-	int a, b, c;
-char cop[100];
-b = 0;
-for (c = 0; str[c] != 0; c++)
-{
-}
+int a;
 for (a = 0; str[a] != '\0'; a++)
 {
-cop[a] = str[b];
-_putchar(cop[a]);
-if ((b + 2) <= c)
+if (a % 2 == 0)
 {
-b = b + 2;
-}
-else
-{
-	break;
+_putchar(str[a]);
 }
 }
 _putchar('\n');
