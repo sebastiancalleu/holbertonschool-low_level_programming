@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * puts2 - print other numbers diferents of a srting
- * @*str: input variable
+ * @str: input variable
  *
  */
 void puts2(char *str)
