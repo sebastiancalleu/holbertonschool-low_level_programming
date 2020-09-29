@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * puts_half - this function prints the half string.
- * @*str: input variable.
+ * @str: input variable.
  *
  */
 void puts_half(char *str)
@@ -14,7 +14,7 @@ if (a % 2 == 0)
 {
 	b = a / 2;
 }
-else 
+else
 {
 	b = (a - 1) / 2;
 }
