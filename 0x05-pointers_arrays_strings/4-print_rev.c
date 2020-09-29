@@ -6,10 +6,13 @@
  */
 void print_rev(char *str)
 {
-int i;
-for (i = 63; i >= 0; --i)
+int a, b;
+for (b = 0; str[b] != '\0'; b++)
 {
-_putchar(str[i]);
+}
+for (a = b; a >= 0; --a)
+{
+_putchar(str[a]);
 }
 _putchar('\n');
 }
