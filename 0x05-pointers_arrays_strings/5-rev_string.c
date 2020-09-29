@@ -6,19 +6,16 @@
  */
 void rev_string(char *s)
 {
-int i, j, k, m;
-char rev[1000];
+int i, j, k;
+char cop[1000];
+k = 0;
 for (i = 0; s[i] != '\0'; i++)
 {
-k = i;
+cop[i] = s[i];
 }
-for (j = 0; j <= i; j++)
+for (j = i - 1; j >= 0; j--)
 {
-rev[j] = s[k];
-k--;
-}
-for (m = 0; m <= i - 1; m++)
-{
-s[m] = rev[m];
+s[j] = cop[k];
+k++;
 }
 }
