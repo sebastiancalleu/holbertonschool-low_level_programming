@@ -7,10 +7,10 @@
 void rev_string(char *s)
 {
 int i, j, k, m;
-char rev[100];
+char rev[1000];
 for (i = 0; s[i] != '\0'; i++)
 {
-k = i - 1;
+k = i;
 }
 for (j = 0; j <= i; j++)
 {
