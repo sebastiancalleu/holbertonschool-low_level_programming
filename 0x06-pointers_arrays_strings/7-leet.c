@@ -7,15 +7,15 @@
 char *leet(char *s)
 {
 int a, b;
-char let[] = "aAeEoOtTlL";
-char num[] = "4433007711";
+char l[] = "aAeEoOtTlL";
+char n[] = "4433007711";
 for (b = 0; s[b]; b++)
 {
-for (a = 0; let[a]; a++)
+for (a = 0; l[a]; a++)
 {
-if (s[b] == let[a])
+if (s[b] == l[a])
 {
-s[b] = num[a];
+s[b] = n[a];
 }
 else
 {
