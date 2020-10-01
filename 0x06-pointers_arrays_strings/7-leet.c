@@ -17,9 +17,6 @@ if (s[b] == l[a])
 {
 s[b] = n[a];
 }
-else
-{
-}
 }
 }
 return (s);
