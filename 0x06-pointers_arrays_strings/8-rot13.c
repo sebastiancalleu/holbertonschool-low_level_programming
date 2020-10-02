@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * rot13 - transform a string to a rot13
+ * rot13 - transform a string to a rot13,  ithink
  * @s: input string.
  * Return: the leet string.
  */
