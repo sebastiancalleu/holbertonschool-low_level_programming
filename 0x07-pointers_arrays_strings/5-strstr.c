@@ -7,7 +7,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int a;
+	int a, b;
 
 	if (needle[0] == '\0')
 	{
@@ -17,7 +17,17 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[a] == needle[0])
 		{
-			return (haystack + a);
+			for (b = 0; needle[b] != '\0'; b++)
+			{
+				if (haystack[a + b] != needle[b])
+				{
+					break;
+				}
+			}
+			if (needle[b] == '\0')
+			{
+			return (&haystack[a]);
+			}
 		}
 	}
 	if (haystack[0] == '\0')
