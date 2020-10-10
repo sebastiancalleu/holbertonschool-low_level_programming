@@ -9,9 +9,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b, c;
+	int a, b;
 
-	c = 0;
+	b = 0;
 	if (argc == 1)
 	{
 		printf("0\n");
@@ -21,8 +21,7 @@ int main(int argc, char *argv[])
 	{
 		if (isdigit(*argv[a]))
 		{
-			b = atoi(argv[a]);
-			c += b;
+			b += atoi(argv[a]);
 		}
 		else
 		{
@@ -30,9 +29,6 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	if (a == argc)
-	{
-		printf("%d\n", c);
-	}
+		printf("%d\n", b);
 return (0);
 }
