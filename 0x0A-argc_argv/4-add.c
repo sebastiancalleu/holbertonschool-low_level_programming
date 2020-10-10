@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b;
+	int a, b, c;
 
 	b = 0;
 	if (argc == 1)
@@ -19,16 +19,16 @@ int main(int argc, char *argv[])
 	}
 	for (a = 1; a < argc; a++)
 	{
-		if (isdigit(*argv[a]))
+		for (c = 0; argv[a][c]; c++)
 		{
-			b += atoi(argv[a]);
+			if (!isdigit(argv[a][c]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		b += atoi(argv[a]);
 	}
-		printf("%d\n", b);
-return (0);
+	printf("%d\n", b);
+	return (0);
 }
