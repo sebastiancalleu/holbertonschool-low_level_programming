@@ -7,10 +7,13 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int a;
+	unsigned int a, c;
 	char *b;
 
-	b = malloc((sizeof(str) + 1) * sizeof(char));
+	for (c = 0; str[c]; c++)
+	{
+	}
+	b = malloc((c + 1) * sizeof(char));
 	if (b == NULL || str == NULL)
 	{
 		return (NULL);
