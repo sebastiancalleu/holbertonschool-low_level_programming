@@ -7,7 +7,7 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int a, c;
+	int a, c;
 	char *b;
 
 	for (c = 0; str[c]; c++)
