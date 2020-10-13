@@ -10,8 +10,8 @@ char *_strdup(char *str)
 	unsigned int a;
 	char *b;
 
-	b = malloc(sizeof(str));
-	if (sizeof(str) == 0 || b == NULL)
+	b = malloc(sizeof(str) * sizeof(char));
+	if (sizeof(str) == 0 || b == NULL || str == NULL)
 	{
 		return (NULL);
 	}
@@ -21,6 +21,7 @@ char *_strdup(char *str)
 	{
 		b[a] = str[a];
 	}
+	b[a] = '\0';
 	return (b);
 	}
 }
