@@ -10,8 +10,8 @@ char *_strdup(char *str)
 	unsigned int a;
 	char *b;
 
-	b = malloc(sizeof(str) * sizeof(char));
-	if (sizeof(str) == 0 || b == NULL || str == NULL)
+	b = malloc((sizeof(str) + 1) * sizeof(char));
+	if (b == NULL || str == NULL)
 	{
 		return (NULL);
 	}
