@@ -9,7 +9,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int a, b, c, d, e, f;
+	int a, b, c, d;
 	char *str;
 
 	c = 0;
@@ -18,14 +18,14 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	for (e = 0; e < ac; e++)
+	for (a = 0; a < ac; a++)
 	{
-		for (f = 0; av[e][f]; f++)
+		for (b = 0; av[a][b]; b++)
 		{
 			d++;
 		}
 	}
-	str = malloc((d + ac) * sizeof(char));
+	str = malloc((d + ac + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		return (NULL);
