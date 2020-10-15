@@ -21,7 +21,7 @@ int *array_range(int min, int max)
 	{
 		c++;
 	}
-	a = malloc((c + 1) * sizeof(int));
+	a = malloc((c) * sizeof(int));
 		if (a == NULL)
 		{
 			return (NULL);
