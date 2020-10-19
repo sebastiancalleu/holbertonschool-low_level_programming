@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdo.h>
+#include <stdio.h>
 int auxfun(char *str);
 /**
  * new_dog - this function create a new dog.
