@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdo.h>
 int auxfun(char *str);
 /**
  * new_dog - this function create a new dog.
@@ -16,12 +17,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int a;
 
 	newdog = malloc(sizeof(dog_t));
-	if (!newdog)
+	if (newdog == NULL)
 	{
 		return (NULL);
 	}
 	newdog->name = malloc(auxfun(name) + 1);
-	if (!newdog->name)
+	if (newdog->name == NULL)
 	{
 		free(newdog->name);
 		free(newdog);
@@ -34,7 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	newdog->name[a] = '\0';
 	newdog->age = age;
 	newdog->owner = malloc(auxfun(owner) + 1);
-	if (!newdog->owner)
+	if (newdog->owner == NULL)
 	{
 		free(newdog->name);
 		free(newdog);
@@ -58,7 +59,7 @@ int auxfun(char *str)
 {
 	int a;
 
-	for (a = 0; str[a]; a++)
+	for (a = 0; str[a] != '\0'; a++)
 	{
 	}
 	return (a);
