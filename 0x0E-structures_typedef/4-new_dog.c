@@ -23,6 +23,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	newdog->name = malloc(auxfun(name) + 1);
 	if (!newdog->name)
 	{
+		free(newdog->name);
+		free(newdog);
 		return (NULL);
 	}
 	for (a = 0; name[a]; a++)
@@ -34,12 +36,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	newdog->owner = malloc(auxfun(owner) + 1);
 	if (!newdog->owner)
 	{
+		free(newdog->name);
+		free(newdog);
 		return (NULL);
 	}
 	for (a = 0; owner[a]; a++)
 	{
 		newdog->owner[a] = owner[a];
 	}
+	newdog->owner[a] = '\0';
 	return (newdog);
 }
 
@@ -56,5 +61,5 @@ int auxfun(char *str)
 	for (a = 0; str[a]; a++)
 	{
 	}
-	return(a);
+	return (a);
 }
