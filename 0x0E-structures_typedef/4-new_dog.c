@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+int auxfun(char *str);
 /**
  * new_dog - this function create a new dog.
  * @name: the new dog name.
@@ -19,7 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	newdog->name = malloc(sizeof(name) + 1);
+	newdog->name = malloc(auxfun(name) + 1);
 	if (!newdog->name)
 	{
 		return (NULL);
@@ -30,7 +31,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	newdog->name[a] = '\0';
 	newdog->age = age;
-	newdog->owner = malloc(sizeof(owner) + 1);
+	newdog->owner = malloc(auxfun(owner) + 1);
 	if (!newdog->owner)
 	{
 		return (NULL);
@@ -40,4 +41,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 		newdog->owner[a] = owner[a];
 	}
 	return (newdog);
+}
+
+/**
+ * auxfun - this function counts the number of chars of a string.
+ * @str: the string.
+ * Return: the count.
+ *
+ */
+int auxfun(char *str)
+{
+	int a;
+
+	for (a = 0; str[a]; a++)
+	{
+	}
+	return(a);
 }
