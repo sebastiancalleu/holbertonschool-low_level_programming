@@ -2,7 +2,7 @@
 #define A "Hello, Holberton"
 /**
  * main - print a message
- *
+ * Return: nothing.
  */
 void main(void)
 {
