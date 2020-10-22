@@ -10,13 +10,13 @@ int main(int argc, char *argv[])
 {
 	int a, b, c;
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
 	if (b == 0 && (*argv[2] == '/' || *argv[2] == '%'))
 	{
 		printf("Error\n");
