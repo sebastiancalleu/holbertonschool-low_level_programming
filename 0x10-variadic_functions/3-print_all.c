@@ -49,6 +49,7 @@ void pstring(va_list s)
 void print_all(const char * const format, ...)
 {
 	int a = 0, b = 0;
+	char *s = "";
 	print_data print [] = {
 	{"c", pchar},
 	{"i", pint},
@@ -64,10 +65,10 @@ while (format && format[a])
 	{
 		if (format[a] == *(print[b].spec))
 		{
-		print[b].func(all);
-		if (format[a + 1] != '\0')
-			printf(", ");
-		break;
+			printf("%s", s);
+			print[b].func(all);
+			s = ", ";
+			break;
 		}
 		b++;
 	}
