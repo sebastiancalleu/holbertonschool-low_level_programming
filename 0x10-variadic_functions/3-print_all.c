@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 	{NULL, NULL}
 };
 va_start(all, format);
-while (format[a])
+while (format && format[a])
 {
 	while (print[b].spec)
 	{
