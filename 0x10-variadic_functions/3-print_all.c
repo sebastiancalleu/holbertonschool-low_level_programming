@@ -5,9 +5,10 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list all;
 	int  b = 0;
 	char *s;
+
+	va_list all;
 
 	va_start(all, format);
 	while(format == NULL)
