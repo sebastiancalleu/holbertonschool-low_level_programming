@@ -49,8 +49,6 @@ void pstring(va_list s)
 void print_all(const char * const format, ...)
 {
 	int a = 0, b = 0;
-	va_list all;
-
 	print_data print [] = {
 	{"c", pchar},
 	{"i", pint},
@@ -58,7 +56,8 @@ void print_all(const char * const format, ...)
 	{"s", pstring},
 	{NULL, NULL}
 };
-va_start(all, format);
+	va_list all;
+	va_start(all, format);
 while (format && format[a])
 {
 	while (print[b].spec)
