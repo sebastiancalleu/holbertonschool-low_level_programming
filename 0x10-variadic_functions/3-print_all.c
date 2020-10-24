@@ -1,47 +1,84 @@
 #include "variadic_functions.h"
+void pchar(va_list);
+void pint(va_list);
+void pfloat(va_list);
+void pstring(va_list);
+
 /**
  * print_all - this function prints all.
  * @format: this is a format string.
  */
 void print_all(const char * const format, ...)
 {
-	int  b = 0;
-	char *s;
-
+	int a = 0, b = 0;
 	va_list all;
 
-	va_start(all, format);
-	while (format == NULL)
+	print_data print [] = {
+	{"c", pchar},
+	{"i", pint},
+	{"f", pfloat},
+	{"s", pstring},
+	{NULL, NULL}
+};
+va_start(all, format);
+while (format[a])
+{
+	while (print[b].spec)
 	{
-		printf("\n");
-		return;
-	}
-	while (format[b])
-	{
-		switch (format[b])
+		if (format[a] == *(print[b].spec))
 		{
-		case 'c':
-			printf("%c", (char) va_arg(all, int));
-			break;
-		case 'i':
-			printf("%d", va_arg(all, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(all, double));
-			break;
-		case 's':
-			s = va_arg(all, char *);
-			if (s != NULL)
-				printf("%s", s);
-			else
-				printf("(nil)");
-			break;
-		}
-		if ((format[b] == 's' || format[b] == 'i' || format[b] == 'f' ||
-		     format[b] == 'c') && format[b + 1] != '\0')
+		print[b].func(all);
+		if (format[a + 1] != '\0')
 			printf(", ");
+		break;
+		}
 		b++;
 	}
-	va_end(all);
-	printf("\n");
+	b = 0;
+	a++;
+}
+printf("\n");
+va_end(all);
+}
+/**
+ *pchar - print a char.
+ *@c: list
+ */
+void pchar(va_list c)
+{
+	printf("%c", va_arg(c, int));
+}
+
+/**
+ * pint - print a intiger
+ * @i: list
+ */
+void pint(va_list i)
+{
+	printf("%d", va_arg(i, int));
+}
+
+/**
+ * pfloat - print a float
+ * @f: list
+ */
+
+void pfloat(va_list f)
+{
+	printf("%f", va_arg(f, double));
+}
+
+/**
+ * pstring - print a string
+ * @s: the list.
+ */
+
+void pstring(va_list s)
+{
+	char *str;
+
+	str = va_arg(s, char *);
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
