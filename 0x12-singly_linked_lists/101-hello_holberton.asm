@@ -1,12 +1,19 @@
-section .text
-global main
+ SECTION .data
+msg:      db "Hello, Holberton", 0
+fmt:      db "%s", 10, 0
+
+        SECTION .text
+        extern printf
+        global main
 main:
-		mov ebx,1
-		mov ecx,msg
-		mov edx,17
-		mov eax,4
-		int 0x80
-		mov eax,0
-		int 0x80
-section .data
-msg db 'Hello, Holberton',0xa
+
+        mov esi, msg    ; 64-bit Direccion comienzo de la cadena
+        mov edi, fmt    ; Formato de la cadena
+        mov eax, 0      ; printf is varargs,  EAX cuenta
+
+                        ;el numero de argumentos no enteros pasados
+        call printf
+
+        mov ebx, 0      ; normal-exit code
+        mov eax, 1      ; process-termination service
+        int 0x80
