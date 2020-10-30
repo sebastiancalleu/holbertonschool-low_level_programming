@@ -11,7 +11,7 @@ size_t print_list(const list_t *h)
 	const list_t *b;
 
 	b = h;
-	for (a = 1; a > 0; a++)
+	for (a = 1; b->next != NULL; a++)
 	{
 		if (b->str == NULL)
 		{
@@ -21,11 +21,8 @@ size_t print_list(const list_t *h)
 		{
 			printf("[%d] %s\n", (*b).len, (*b).str);
 		}
-		if (b->next == NULL)
-		{
-			break;
-		}
 		b = b->next;
 	}
+printf("[%d] %s\n", (*b).len, (*b).str);
 	return (a);
 }
