@@ -21,19 +21,14 @@ return (a);
  */
 list_t *add_node(list_t **head, const char *str)
 {
-char *s = strdup(str);
-unsigned int a;
 list_t *newnode = malloc(sizeof(list_t));
 
 if (newnode == NULL)
 {
 	return (NULL);
 }
-for (a = 0; s[a]; a++)
-{
-}
-newnode->len = _strlen(s);
-newnode->str = s;
+newnode->len = _strlen(str);
+newnode->str = strdup(str);
 newnode->next = (*head);
 (*head) = newnode;
 return (newnode);
