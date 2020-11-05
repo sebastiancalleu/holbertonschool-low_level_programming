@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 	{
 		_putchar('0');
 	}
-	for (b = ((sizeof(unsigned long int) * 4) - 1); b >= 0; b--)
+	for (b = ((sizeof(unsigned long int) * 8) - 1); b >= 0; b--)
 	{
 		a = n >> b;
 		if (a)
