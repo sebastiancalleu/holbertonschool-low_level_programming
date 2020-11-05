@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_binary - this function prints the binary number of a decimal.
@@ -14,7 +15,7 @@ void print_binary(unsigned int n)
 	{
 		_putchar('0');
 	}
-	for (b = ((sizeof(unsigned long int) * 8) - 1); b >= 0; b--)
+	for (b = ((sizeof(unsigned long int) * 4) - 1); b >= 0; b--)
 	{
 		a = n >> b;
 		if (a)
