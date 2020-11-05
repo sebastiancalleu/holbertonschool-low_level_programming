@@ -6,7 +6,7 @@
  * @n: the decimal number.
  */
 
-void print_binary(unsigned int n)
+void print_binary(unsigned long int n)
 {
 	unsigned long int a;
 	int b;
