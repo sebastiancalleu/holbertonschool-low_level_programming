@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -36,6 +35,7 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: can't write from file %s\n", av[2]);
 		exit(99);
 	}
+	do {
 	a = read(fd, buf, 1024);
 	if (a == -1)
 	{
@@ -48,6 +48,7 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: can't write from file %s\n", av[2]);
 		exit(99);
 	}
+	} while (a == 1024);
 	c1 = close(fd);
 	if (c1 == -1)
 	{
