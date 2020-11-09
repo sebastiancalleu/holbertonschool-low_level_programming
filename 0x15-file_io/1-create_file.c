@@ -16,18 +16,17 @@ int _strlen(char *);
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, a, b;
+	int fd, b;
 
 	if (filename == NULL)
 		return (-1);
-	a = _strlen(text_content);
 	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
 	if (fd == -1)
 		return (-1);
 	if (text_content == NULL)
 		b = write(fd, text_content, 0);
 	else
-		b = write(fd, text_content, a);
+		b = write(fd, text_content, _strlen(text_content));
 	if (b == -1)
 		return (-1);
 	close(fd);
