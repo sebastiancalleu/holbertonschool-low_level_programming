@@ -9,7 +9,7 @@
 /**
  * main - this functions copy content to one file to other.
  * @ac: is the arg counter.
- * @av: is the arg strings.
+ * @av: is the arg array of strings.
  * Return: 0 if success.
  */
 
