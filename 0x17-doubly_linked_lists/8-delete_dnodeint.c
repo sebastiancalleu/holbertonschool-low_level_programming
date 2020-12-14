@@ -60,6 +60,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		}
 		tmp1->prev->next = NULL;
 		free(tmp1);
+		return (1);
 	}
 	tmp2 = *head;
 	tmp2 = tmp2->next;
