@@ -1,5 +1,11 @@
 #include "lists.h"
 
+/**
+ * delete_first_node - delete the first node.
+ * @head: the list.
+ * @tmp1: temporal list.
+ */
+
 void delete_first_node(dlistint_t **head, dlistint_t **tmp1)
 {
 	if (dlistint_len(*head) == 1)
