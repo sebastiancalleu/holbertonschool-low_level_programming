@@ -15,10 +15,8 @@ void hash_table_print(const hash_table_t *ht)
 		printf("{}\n");
 	else
 	{
-	printf("{");
+			printf("{");
 		for (a = 0; a < ht->size; a++)
-		{
-		if (ht->array[a] != NULL)
 		{
 			cpynode = ht->array[a];
 			while (cpynode)
@@ -29,12 +27,11 @@ void hash_table_print(const hash_table_t *ht)
 				{
 					if (ht->array[b] != NULL)
 					{
-					printf(", ");
-					break;
+						printf(", ");
+						break;
 					}
 				}
 			}
-		}
 		}
 		printf("}\n");
 	}
