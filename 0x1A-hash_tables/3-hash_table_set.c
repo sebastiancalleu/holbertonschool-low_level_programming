@@ -20,8 +20,8 @@ int add_nodeatin(hash_node_t **ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-	newnode->key = (char *)key;
-	newnode->value = (char *)value;
+	newnode->key = strdup(key);
+	newnode->value = strdup(value);
 	newnode->next = *ht;
 	*ht = newnode;
 	return (1);
@@ -37,7 +37,6 @@ int add_nodeatin(hash_node_t **ht, const char *key, const char *value)
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	const char *cpvalue = strdup(value);
 	unsigned long int index;
 	int flag = 0;
 	hash_node_t *cpynode;
@@ -51,8 +50,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = malloc(sizeof(hash_node_t));
 		if (ht->array[index] == NULL)
 			return (0);
-		ht->array[index]->key = (char *)key;
-		ht->array[index]->value = (char *)cpvalue;
+		ht->array[index]->key = strdup(key);
+		ht->array[index]->value = strdup(value);
 		ht->array[index]->next = NULL;
 	}
 	else
@@ -65,7 +64,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				if (cpynode->value)
 				{
 					free(cpynode->value);
-					cpynode->value = (char *)cpvalue;
+					cpynode->value = strdup(value);
 				}
 				flag = 1;
 				break;
@@ -74,7 +73,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		if (flag != 1)
 		{
-			if (add_nodeatin(&ht->array[index], key, cpvalue) == 0)
+			if (add_nodeatin(&ht->array[index], key, value) == 0)
 				return (0);
 		}
 	}
