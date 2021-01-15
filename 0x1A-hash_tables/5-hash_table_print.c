@@ -11,28 +11,23 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *cpynode;
 	unsigned int a, b;
 
-	if (ht == NULL)
-		printf("{}\n");
-	else
+	printf("{");
+	for (a = 0; a < ht->size; a++)
 	{
-			printf("{");
-		for (a = 0; a < ht->size; a++)
+		cpynode = ht->array[a];
+		while (cpynode)
 		{
-			cpynode = ht->array[a];
-			while (cpynode)
+			printf("'%s': '%s'", cpynode->key, cpynode->value);
+			cpynode = cpynode->next;
+			for (b = a + 1; b < ht->size; b++)
 			{
-				printf("'%s': '%s'", cpynode->key, cpynode->value);
-				cpynode = cpynode->next;
-				for (b = a + 1; b < ht->size; b++)
+				if (ht->array[b] != NULL)
 				{
-					if (ht->array[b] != NULL)
-					{
-						printf(", ");
-						break;
-					}
+					printf(", ");
+					break;
 				}
 			}
 		}
-		printf("}\n");
 	}
+	printf("}\n");
 }
