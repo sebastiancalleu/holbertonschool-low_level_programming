@@ -39,7 +39,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	const char *cpvalue = strdup(value);
 	unsigned long int index;
-	int flag;
+	int flag = 0;
 	hash_node_t *cpynode;
 
 	if (key == NULL || strcmp(key, "") == 0 || ht == NULL || value == NULL)
@@ -50,9 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		ht->array[index] = malloc(sizeof(hash_node_t));
 		if (ht->array[index] == NULL)
-		{
 			return (0);
-		}
 		ht->array[index]->key = (char *)key;
 		ht->array[index]->value = (char *)cpvalue;
 		ht->array[index]->next = NULL;
