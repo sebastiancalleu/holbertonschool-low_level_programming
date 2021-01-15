@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * add_nodeatin - this function adds a node at beginning.
@@ -36,21 +37,41 @@ int add_nodeatin(hash_node_t **ht, const char *key, const char *value)
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	const char *cpvalue = value;
+	const char *cpvalue = strdup(value);
 	unsigned long int index;
+
+	if (key == NULL || strcmp(key, "") == 0 || ht == NULL || value == NULL)
+	{
+		return (0);
+	}
 
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = malloc(sizeof(hash_node_t));
+		if (ht->array[index] == NULL)
+		{
+			return (0);
+		}
 		ht->array[index]->key = (char *)key;
 		ht->array[index]->value = (char *)cpvalue;
 		ht->array[index]->next = NULL;
 	}
 	else
 	{
-		if (add_nodeatin(&ht->array[index], key, cpvalue) == 0)
-			return (0);
+		if (strcmp(ht->array[index]->key, key) == 0)
+		{
+			if (ht->array[index]->value)
+			{
+				free(ht->array[index]->value);
+				ht->array[index]->value = (char *)cpvalue;
+			}
+		}
+		else
+		{
+			if (add_nodeatin(&ht->array[index], key, cpvalue) == 0)
+				return (0);
+		}
 	}
 	return (1);
 }
