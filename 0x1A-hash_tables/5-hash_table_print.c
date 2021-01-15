@@ -11,6 +11,11 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *cpynode;
 	unsigned int a, b = 0;
 
+	if (ht == NULL)
+	{
+		printf("{}\n");
+		return;
+	}
 	printf("{");
 	for (a = 0; a < ht->size; a++)
 	{
