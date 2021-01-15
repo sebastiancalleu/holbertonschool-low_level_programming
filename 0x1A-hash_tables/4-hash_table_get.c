@@ -27,6 +27,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(cpnode->key, key) == 0)
 			return (cpnode->value);
+		cpnode = cpnode->next;
 	}
 	return (NULL);
 }
