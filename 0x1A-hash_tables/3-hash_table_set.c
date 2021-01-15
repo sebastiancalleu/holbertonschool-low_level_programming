@@ -72,10 +72,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			cpynode = cpynode->next;
 		}
 		if (flag != 1)
-		{
 			if (add_nodeatin(&ht->array[index], key, value) == 0)
 				return (0);
-		}
 	}
 	return (1);
 }
