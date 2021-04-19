@@ -1,9 +1,16 @@
 #include "search_algos.h"
 
+/**
+ * printarr - function that prints the array.
+ * @array: the array
+ * @bottom: the down limit.
+ * @top: the top limit.
+ */
+
 void printarr(int *array, unsigned int bottom, unsigned int top)
 {
 	printf("Searching in array: ");
-	while(bottom < top)
+	while (bottom < top)
 	{
 		if (bottom == top - 1)
 			printf("%d\n", array[bottom]);
@@ -13,6 +20,13 @@ void printarr(int *array, unsigned int bottom, unsigned int top)
 	}
 }
 
+/**
+ * inferior - function that select the lower array.
+ * @middle: the middle index.
+ * @top: the top index.
+ * @bottom: the bottom index.
+ */
+
 void inferior(unsigned int *middle, unsigned int *top, unsigned int *bottom)
 {
 	int diff;
@@ -20,10 +34,17 @@ void inferior(unsigned int *middle, unsigned int *top, unsigned int *bottom)
 	*top = *middle;
 	diff = *top - *bottom;
 	if (diff % 2 == 0)
-		*middle = diff/2 + *bottom - 1;
+		*middle = diff / 2 + *bottom - 1;
 	else
-		*middle = diff/2 + *bottom;
+		*middle = diff / 2 + *bottom;
 }
+
+/**
+ * superior - function that select the higher array.
+ * @middle: the middle index.
+ * @top: the top index.
+ * @bottom: the bottom index.
+ */
 
 void superior(unsigned int *middle, unsigned int *top, unsigned int *bottom)
 {
@@ -32,9 +53,9 @@ void superior(unsigned int *middle, unsigned int *top, unsigned int *bottom)
 	*bottom = *middle + 1;
 	diff = *top - *bottom;
 	if (diff % 2 == 0)
-		*middle = diff/2 + *bottom - 1;
+		*middle = diff / 2 + *bottom - 1;
 	else
-		*middle = diff/2 + *bottom;
+		*middle = diff / 2 + *bottom;
 }
 
 /**
@@ -42,6 +63,7 @@ void superior(unsigned int *middle, unsigned int *top, unsigned int *bottom)
  * @array: the array
  * @size: the size of the array
  * @value: the value to find.
+ * Return: the index of the value
  */
 
 int binary_search(int *array, size_t size, int value)
@@ -50,16 +72,16 @@ int binary_search(int *array, size_t size, int value)
 
 	top = size;
 	if (top % 2 == 0)
-		middle = top/2 - 1;
+		middle = top / 2 - 1;
 	else
-		middle = top/2;
+		middle = top / 2;
 	printarr(array, bottom, top);
-	while(1 < 2)
+	while (1 < 2)
 	{
 		if ((middle == bottom) && (array[middle] != value) && (middle + 1 == top))
-			return(-1);
+			return (-1);
 		if (array[middle] == value)
-			return(middle);
+			return (middle);
 		if (array[middle] > value)
 		{
 			printarr(array, bottom, middle);
