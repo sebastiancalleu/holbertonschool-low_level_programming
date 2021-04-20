@@ -71,7 +71,7 @@ int binary_search(int *array, size_t size, int value)
 	unsigned int middle, top, bottom = 0;
 
 	if (array == NULL)
-		return (-1)
+		return (-1);
 	top = size;
 	if (top % 2 == 0)
 		middle = top / 2 - 1;
