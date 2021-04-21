@@ -7,15 +7,15 @@
  * @value: the value of the array.
  * Return: the index.
  */
-
+/*
 int jump_search(int *array, size_t size, int value)
 {
-	unsigned int counter, root, init;
+	int counter, root, init;
 
 	if (array == NULL)
 		return (-1);
-	root = sqrt(size);
-	for (counter = 0; counter < size; counter = counter + root)
+	root = sqrt((int)size);
+	for (counter = 0; counter < (int)size; counter += root)
 	{
 		printf("Value checked array[%d] = [%d]\n", counter, array[counter]);
 		if (array[counter + root] >= value)
@@ -33,6 +33,32 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%d] = [%d]\n", counter, array[counter]);
 		if (array[counter] == value)
 			return (counter);
+	}
+	return (-1);
+}
+*/
+int jump_search(int *array, size_t size, int value)
+{
+	int prev = 0, jump = sqrt((int)size), pos = 0;
+
+	if (array == NULL)
+		return (-1);
+	for (; prev <= (int)size - 1; prev += jump)
+	{
+		if (array[prev] >= value)
+			break;
+		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+	}
+	pos = prev - jump;
+	printf("Value found between indexes [%d] and [%d]\n", pos, prev);
+	for (; pos <= prev; pos++)
+	{
+		if (pos < (int)size)
+		{
+			printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
+			if (array[pos] == value)
+				return (pos);
+		}
 	}
 	return (-1);
 }
