@@ -15,7 +15,7 @@ int jump_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 	root = sqrt((int)size);
-	for (counter = 0; counter < (int)size + root; counter += root)
+	for (counter = 0; counter < (int)size; counter += root)
 	{
 		if (array[counter] >= value)
 		{
@@ -38,5 +38,5 @@ int jump_search(int *array, size_t size, int value)
 		if (array[init] == value)
 			return (init);
 	}
-	return (-1);
+	return (-1)
 }
